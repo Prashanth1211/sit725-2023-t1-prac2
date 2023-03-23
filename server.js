@@ -10,6 +10,10 @@ app.get("/",function(req,res){
     res.render('index.html')
 });
 
+function mathematicalCalculations(){
+    var result = parseInt(number1)+parseInt(number2);
+    return result;
+}
 app.get("/addtwoNumbers",(req,res) =>{
     var number1 = req.query.number1
     var number2 = req.query.number2
