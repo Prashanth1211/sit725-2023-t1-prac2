@@ -7,7 +7,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
 app.get("/",function(req,res){
-    res.render('index.html')
+    res.render('index.html');
 });
 
 function mathematicalCalculations(choice,number1,number2){
@@ -34,17 +34,17 @@ function mathematicalCalculations(choice,number1,number2){
     
 }
 app.get("/addtwoNumbers",(req,res) =>{
-    var number1 = req.query.number1
-    var number2 = req.query.number2
+    var number1 = req.query.number1;
+    var number2 = req.query.number2;
     var choice = 1;
 
-    var result = mathematicalCalculations(choice,number1,number2)
+    var result = mathematicalCalculations(choice,number1,number2);
 
-    res.json({statuscode:200,data:result,message:"success"})
+    res.json({statuscode:200,data:result,message:"success"});
 })
 app.get("/subtwoNumbers",(req,res) =>{
-    var number1 = req.query.number1
-    var number2 = req.query.number2
+    var number1 = req.query.number1;
+    var number2 = req.query.number2;
 
     var choice = 2;
 
@@ -53,24 +53,24 @@ app.get("/subtwoNumbers",(req,res) =>{
     res.json({statuscode:200,data:result,message:"success"})
 })
 app.get("/multwoNumbers",(req,res) =>{
-    var number1 = req.query.number1
-    var number2 = req.query.number2
+    var number1 = req.query.number1;
+    var number2 = req.query.number2;
 
     var choice = 3;
 
     var result = mathematicalCalculations(choice,number1,number2);
 
-    res.json({statuscode:200,data:result,message:"success"})
+    res.json({statuscode:200,data:result,message:"success"});
 })
 app.get("/dividetwoNumbers",(req,res) =>{
-    var number1 = req.query.number1
-    var number2 = req.query.number2
+    var number1 = req.query.number1;
+    var number2 = req.query.number2;
 
     var choice = 4;
 
     var result = mathematicalCalculations(choice,number1,number2);
 
-    res.json({statuscode:200,data:result,message:"success"})
+    res.json({statuscode:200,data:result,message:"success"});
 })
 app.listen(port,()=>{
     console.log("App listening to: "+port)
